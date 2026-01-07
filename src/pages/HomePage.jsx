@@ -55,13 +55,12 @@ export default function HomePage() {
         <div className="shell hero-grid">
           <div className="hero-left">
             <div className="hero-pill-row">
-              <span className="pill">★ for girls 13–19</span>
-              <span className="pill">Kazakhstan & Central Asia</span>
+              <span className="pill">for girls 13–22</span>
+              <span className="pill">Kazakhstan & CIS region</span>
             </div>
 
             <h1 className="hero-title">
-              A community for girls who want to build with code, not just talk
-              about it.
+              A community for girls who turn ideas into code and real projects.
             </h1>
 
             <p className="hero-lead">
@@ -112,14 +111,14 @@ export default function HomePage() {
 
               <div className="hero-mini-grid">
                 <div className="hero-mini">
-                  <div className="hero-mini-title">👩‍💻 Code & projects</div>
+                  <div className="hero-mini-title">Code & projects</div>
                   <div className="hero-mini-body">
                     From first lines of Python or JavaScript to apps and
                     startup-level ideas.
                   </div>
                 </div>
                 <div className="hero-mini">
-                  <div className="hero-mini-title">🎓 Path abroad</div>
+                  <div className="hero-mini-title">Path abroad</div>
                   <div className="hero-mini-body">
                     Olympiads, research, and college applications with
                     examples, checklists, and peer mentors.
@@ -152,7 +151,7 @@ export default function HomePage() {
                 What Pink Coded has already launched.
               </h2>
               <p className="section-subtitle">
-                Here we collect our main marathons, clubs, and bootcamps. New
+                Here we collect our marathons, clubs, and bootcamps. New
                 cohorts open regularly — follow our Telegram channel to catch
                 the next ones.
               </p>
@@ -224,7 +223,7 @@ export default function HomePage() {
           <div>
             <p className="eyebrow">Join Pink Coded</p>
             <h2 className="section-title">
-              One channel with all programs, resources, and calls.
+              One channel with all programs and resources.
             </h2>
             <p className="section-subtitle">
               Our Telegram channel is the entry point into the community. We
@@ -250,8 +249,8 @@ export default function HomePage() {
           <div className="join-card">
             <h3 className="join-card-title">By girls for girls</h3>
             <p className="join-card-text">
-              Pink Coded is fully organized by high-school and university
-              students. We know how it feels to combine school, Olympiads, and
+              Pink Coded is fully organized by high-school students. 
+              We know how it feels to combine school, Olympiads, and
               applications — and we design programs we needed ourselves.
             </p>
             <div className="join-photo-grid">

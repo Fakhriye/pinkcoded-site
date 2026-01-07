@@ -157,7 +157,7 @@ export default function AboutPage() {
               <div>
                 <p className="eyebrow">What girls say</p>
                 <h2 className="section-title">
-                  Real feedback from real participants.
+                  Feedback from our participants.
                 </h2>
               </div>
               <div className="testimonials-controls">

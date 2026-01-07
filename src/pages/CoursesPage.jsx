@@ -4,21 +4,21 @@ import React from "react";
 const tracks = [
   {
     title: "CS Foundations",
-    tag: "👩‍💻 code",
+    tag: "code",
     description:
-      "Intro to Python and JavaScript, problem solving patterns, and small projects you can show in a portfolio.",
+      "Intro to Python and C++, problem solving patterns, and small projects you can show in a portfolio.",
     status: "In development",
   },
   {
     title: "English for STEM & applications",
-    tag: "📝 language",
+    tag: "language",
     description:
       "From essay structure to academic vocabulary for Olympiads, research, and college applications.",
     status: "In development",
   },
   {
     title: "Research & project labs",
-    tag: "🔬 projects",
+    tag: "projects",
     description:
       "Support for research projects, science fairs, and hackathons — from idea to final presentation.",
     status: "In development",

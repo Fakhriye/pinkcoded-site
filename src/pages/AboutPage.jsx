@@ -22,7 +22,7 @@ const founders = [
     name: "Feride Akhmedova",
     role: "Co-founder · operations & partners",
     blurb:
-      "Keeps registrations, schedules, and partnerships under control so that programs start on time and girls don’t get lost in logistics.",
+      "Designs the community experience: offline meet-ups, online calls, and small traditions that make Pink Coded feel like a safe space.",
     badge: "operations · partners",
     photo: "/images/founders/feride.jpg",
   },
@@ -30,9 +30,9 @@ const founders = [
     name: "Aisha Tortkara",
     role: "Co-founder · community & events",
     blurb:
-      "Designs the community experience: offline meet-ups, online calls, and small traditions that make Pink Coded feel like a safe space.",
+      "Keeps registrations, schedules, and partnerships under control so that programs start on time and girls don’t get lost in logistics.",
     badge: "community · events",
-    photo: "/images/founders/aisha.jpg",
+    photo: "/images/founders/aisha.jpeg",
   },
 ];
 
@@ -54,6 +54,18 @@ const testimonials = [
     detail: "Common App Review workshop",
     text:
       "Hearing comments from an admissions officer in real time was eye-opening. They didn’t just correct grammar — they helped me make my story clearer and more honest.",
+  },
+  {
+    name: "Andrew",
+    detail: "Robotics Course",
+    text:
+      "Thanks to Pink Coded I started my journey in robotics and found like-minded people!",
+  },
+  {
+    name: "Vlad",
+    detail: "SAT Marathon",
+    text:
+      "Men of quality are not afraid of equality. Went from 1400 to 1500 thanks to mentor Feride!",
   },
   {
     name: "Amiran",

@@ -238,7 +238,7 @@ export default function HomePage() {
             </ul>
 
             <a
-              href="https://t.me/pinkcoded"
+              href="https://t.me/pinkcodeeed"
               target="_blank"
               rel="noreferrer"
               className="btn-primary"

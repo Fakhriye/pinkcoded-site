@@ -67,7 +67,7 @@ export default function CoursesPage() {
               announce new cohorts there first.
             </p>
             <a
-              href="https://t.me/pinkcoded"
+              href="https://t.me/pinkcodeeed"
               target="_blank"
               rel="noreferrer"
               className="btn-primary"

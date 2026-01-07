@@ -846,3 +846,155 @@ footer {
     align-items: center;
   }
 }
+
+/* ===== MOBILE (до 640px) ===== */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 1.1rem;
+  }
+
+  .section {
+    padding: 2.4rem 0;
+  }
+
+  .header-inner {
+    height: 3.5rem;
+  }
+
+  .logo-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo-text-main-big {
+    font-size: 1.05rem;
+  }
+
+  .logo-text-sub {
+    font-size: 0.65rem;
+  }
+
+  /* HERO */
+
+  .hero {
+    padding-top: 2rem;
+    row-gap: 1.8rem;
+  }
+
+  .hero-title {
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+
+  .hero-text {
+    font-size: 0.9rem;
+  }
+
+  .hero-stats {
+    gap: 1.1rem;
+  }
+
+  .hero-card {
+    margin-top: 0.5rem;
+    padding: 1.1rem 1rem;
+  }
+
+  .hero-card-title {
+    font-size: 1rem;
+  }
+
+  .hero-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Кнопки в hero – чуть шире */
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-link {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* СЕТКИ: карточки в одну колонку */
+
+  .about-grid,
+  .events-grid,
+  .contacts-grid,
+  .cofounders-grid,
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cofounder-card,
+  .course-card,
+  .event-card {
+    padding: 1rem;
+  }
+
+  /* About hero */
+
+  .about-hero-layout {
+    gap: 1.5rem;
+  }
+
+  .about-hero-title {
+    font-size: 1.8rem;
+  }
+
+  /* Courses hero */
+
+  .courses-hero {
+    gap: 1.8rem;
+  }
+
+  .courses-hero-card {
+    padding: 1.3rem;
+  }
+
+  /* Testimonials */
+
+  .testimonials-shell {
+    padding: 1rem;
+  }
+}
+
+/* ===== VERY SMALL (до 480px) ===== */
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.55rem;
+  }
+
+  .hero-badges {
+    gap: 0.3rem;
+  }
+
+  .badge {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .register {
+    padding: 1.2rem 1rem;
+  }
+
+  .form-card {
+    padding: 0.9rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+}

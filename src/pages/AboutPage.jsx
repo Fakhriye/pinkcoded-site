@@ -16,7 +16,7 @@ const founders = [
     blurb:
       "Builds the website, curriculum for code and research tracks, and keeps experiments with new formats like hack nights and project labs.",
     badge: "code · research",
-    photo: "/images/founders/fakhriye.jpg",
+    photo: "/images/founders/fakhriye.jpeg",
   },
   {
     name: "Feride Akhmedova",

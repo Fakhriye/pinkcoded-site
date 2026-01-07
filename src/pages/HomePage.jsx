@@ -9,7 +9,7 @@ const programs = [
     description:
       "Speaking clubs, essay workshops, and realistic mock tests for girls aiming at 7.0+.",
     status: "Completed",
-    image: "/images/events/ielts-marathon.jpg",
+    image: "/images/events/ielts-marathon.jpeg",
   },
   {
     id: "richmond-common-app",

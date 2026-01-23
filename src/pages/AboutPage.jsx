@@ -20,17 +20,17 @@ const founders = [
   },
   {
     name: "Feride Akhmedova",
-    role: "Co-founder · operations & partners",
+    role: "Co-founder · tech & finances",
     blurb:
-      "Designs the community experience: offline meet-ups, online calls, and small traditions that make Pink Coded feel like a safe space.",
-    badge: "operations · partners",
+      "Keeps Pink Coded running on time and on budget: from spreadsheets and payment links to partner agreements and the tech tools behind our programs.",
+    badge: "code · partners",
     photo: "/images/founders/feride.jpg",
   },
   {
     name: "Aisha Tortkara",
     role: "Co-founder · community & events",
     blurb:
-      "Keeps registrations, schedules, and partnerships under control so that programs start on time and girls don’t get lost in logistics.",
+      "Designs the community experience: offline meet-ups, online calls, and small traditions that make Pink Coded feel like a safe space.",
     badge: "community · events",
     photo: "/images/founders/aisha.jpeg",
   },

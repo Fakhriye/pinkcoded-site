@@ -8,7 +8,7 @@ const founders = [
     blurb:
       "Leads branding, visual style, and communication. Makes sure every girl who might need Pink Coded can actually hear about it.",
     badge: "design · storytelling",
-    photo: "/images/founders/natalie.jpg",
+    photo: "/images/founders/natalie.jpeg",
   },
   {
     name: "Fakhriye Kubysheva",

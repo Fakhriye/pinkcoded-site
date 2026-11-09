@@ -10,7 +10,7 @@ const founders = [
     photo: "/images/founders/natalie.jpeg",
   },
   {
-    name: "Fakhriye Kubysheva",
+    name: "Fakhri Kubysheva",
     role: "Co-founder, tech & programs",
     blurb:
       "Builds the website and the curriculum for the code and research tracks, and experiments with new formats like hack nights and project labs.",

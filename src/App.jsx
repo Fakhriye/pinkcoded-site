@@ -22,16 +22,32 @@ function ScrollManager() {
   return null;
 }
 
-/* --- Page titles for each route --- */
-const TITLES = {
-  "/": "Pink Coded — by girls for girls",
-  "/about": "About — Pink Coded",
-  "/courses": "Programs — Pink Coded",
+/* --- Title, description and canonical link for each page (used by Google) --- */
+const SITE_URL = "https://pinkcoded.net";
+const META = {
+  "/": {
+    title: "Pink Coded — by girls for girls",
+    description:
+      "Pink Coded is a student-run community that gives girls free STEM courses, olympiad preparation and mentorship — coding, English, research and studying abroad.",
+  },
+  "/about": {
+    title: "About & founding team — Pink Coded",
+    description:
+      "Pink Coded was founded by Natalie Khan, Fakhriye Kubysheva, Feride Akhmedova and Aisha Tortkara — students who run free STEM courses and mentorship for girls.",
+  },
+  "/courses": {
+    title: "Programs — Pink Coded",
+    description:
+      "Upcoming Pink Coded courses: CS foundations in Python and C++, English for STEM and applications, and research project labs.",
+  },
 };
-function TitleManager() {
+function MetaManager() {
   const { pathname } = useLocation();
   React.useEffect(() => {
-    document.title = TITLES[pathname] || TITLES["/"];
+    const meta = META[pathname] || META["/"];
+    document.title = meta.title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", meta.description);
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", SITE_URL + (META[pathname] ? pathname : "/"));
   }, [pathname]);
   return null;
 }
@@ -137,7 +153,7 @@ export default function App() {
     <div className="app">
       <a href="#main" className="skip-link">Skip to content</a>
       <ScrollManager />
-      <TitleManager />
+      <MetaManager />
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />

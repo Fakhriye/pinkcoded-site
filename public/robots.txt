@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://pinkcoded.org/sitemap.xml
+Sitemap: https://pinkcoded.net/sitemap.xml

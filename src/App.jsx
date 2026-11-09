@@ -1,111 +1,149 @@
 // src/App.jsx
 import React from "react";
-import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Routes, Route, Link, NavLink, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import CoursesPage from "./pages/CoursesPage.jsx";
+import { TELEGRAM_URL, EMAIL } from "./data.js";
 
-/* --- Scroll to top on route change --- */
+/* --- Scroll to top on page change, or to #section when the link has a hash --- */
+function ScrollManager() {
+  const { pathname, hash } = useLocation();
+  React.useEffect(() => {
+    if (hash) {
+      const el = document.getElementById(hash.slice(1));
+      if (el) {
+        el.scrollIntoView();
+        return;
+      }
+    }
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
+  return null;
+}
 
-function ScrollToTop() {
+/* --- Page titles for each route --- */
+const TITLES = {
+  "/": "Pink Coded — by girls for girls",
+  "/about": "About — Pink Coded",
+  "/courses": "Programs — Pink Coded",
+};
+function TitleManager() {
   const { pathname } = useLocation();
   React.useEffect(() => {
-    window.scrollTo(0, 0);
+    document.title = TITLES[pathname] || TITLES["/"];
   }, [pathname]);
   return null;
 }
 
-/* --- Soft pink cursor glow --- */
-
-function PinkCursorGlow() {
-  const [pos, setPos] = React.useState({ x: -200, y: -200 });
-
-  React.useEffect(() => {
-    const handleMove = (e) => {
-      setPos({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("pointermove", handleMove);
-    return () => window.removeEventListener("pointermove", handleMove);
-  }, []);
-
-  return (
-    <div
-      className="cursor-glow"
-      style={{ left: pos.x, top: pos.y }}
-    />
-  );
-}
-
-/* --- Header --- */
-
 function Header() {
+  const [open, setOpen] = React.useState(false);
+
+  const links = (
+    <>
+      <NavLink to="/" end>Home</NavLink>
+      <NavLink to="/about">About</NavLink>
+      <NavLink to="/courses">Programs</NavLink>
+      <Link to="/#past-programs">Past events</Link>
+    </>
+  );
+
   return (
     <header className="header">
       <div className="shell header-inner">
-        <Link to="/" className="logo">
-          <img
-            src="/pinkcoded-logo.png"
-            alt="Pink Coded logo"
-            className="logo-image"
-          />
-          <div className="logo-text">
-            <span className="logo-title">Pink Coded</span>
-            <span className="logo-subtitle">by girls for girls</span>
-          </div>
+        <Link to="/" className="brand" aria-label="Pink Coded — home">
+          <img src="/pinkcoded-logo.png" alt="" width="44" height="44" />
+          <span className="brand-text">
+            <span className="brand-name">Pink Coded</span>
+            <span className="brand-tag">by girls for girls</span>
+          </span>
         </Link>
 
-        <nav className="nav">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/courses">Programs</Link>
-          <a href="#programs">Events</a>
-          <a href="#join">Join community</a>
+        <nav className="nav" aria-label="Main">
+          {links}
         </nav>
+
+        <div className="header-actions">
+          <a className="btn btn-primary btn-small" href={TELEGRAM_URL} target="_blank" rel="noreferrer">
+            Join on Telegram
+          </a>
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+              {open ? <path d="M5 5l10 10M15 5L5 15" /> : <path d="M3 6h14M3 10h14M3 14h14" />}
+            </svg>
+          </button>
+        </div>
       </div>
+
+      <nav id="mobile-nav" className={"mobile-nav" + (open ? " is-open" : "")} aria-label="Mobile" onClick={() => setOpen(false)}>
+        <div className="shell">
+          {links}
+          <a className="btn btn-primary" href={TELEGRAM_URL} target="_blank" rel="noreferrer">
+            Join on Telegram
+          </a>
+        </div>
+      </nav>
     </header>
   );
 }
 
-/* --- Footer --- */
-
 function Footer() {
   return (
     <footer className="footer">
-      <div className="shell footer-inner">
-        <div className="footer-left">
-          <div className="footer-main">
-            © 2026 Pink Coded — by girls for girls. All rights reserved.
-          </div>
-          <div className="footer-links">
-            <a href="mailto:info@pinkcoded.org">info@pinkcoded.org</a>
-            <span>·</span>
-            <a
-              href="https://t.me/pinkcodeeed"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Telegram channel
-            </a>
-          </div>
+      <div className="shell footer-grid">
+        <div>
+          <Link to="/" className="brand brand-footer" aria-label="Pink Coded — home">
+            <img src="/pinkcoded-logo.png" alt="" width="44" height="44" />
+            <span className="brand-name">Pink Coded</span>
+          </Link>
+          <p className="footer-about">
+            A student-run community for girls in Kazakhstan and the CIS who
+            want to grow in tech, research and studying abroad.
+          </p>
         </div>
-        <div className="footer-right">Almaty, Kazakhstan</div>
+        <div>
+          <h2 className="footer-heading">Pages</h2>
+          <ul className="footer-list">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/courses">Programs</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="footer-heading">Contact</h2>
+          <ul className="footer-list">
+            <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
+            <li><a href={TELEGRAM_URL} target="_blank" rel="noreferrer">Telegram channel</a></li>
+            <li>Almaty, Kazakhstan</li>
+          </ul>
+        </div>
+      </div>
+      <div className="shell footer-bottom">
+        © {new Date().getFullYear()} Pink Coded. All rights reserved.
       </div>
     </footer>
   );
 }
 
-/* --- Root component --- */
-
 export default function App() {
   return (
     <div className="app">
-      <PinkCursorGlow />
-      <ScrollToTop />
+      <a href="#main" className="skip-link">Skip to content</a>
+      <ScrollManager />
+      <TitleManager />
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/courses" element={<CoursesPage />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
       <Footer />
     </div>

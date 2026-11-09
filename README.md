@@ -1,16 +1,20 @@
-# React + Vite
+# Pink Coded website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site for [Pink Coded](https://pinkcoded.net), a student-run community for girls in Kazakhstan and the CIS.
 
-Currently, two official plugins are available:
+Built with React + Vite and deployed on Netlify from this repository.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Run locally
 
-## React Compiler
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Where things live
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/data.js` — stats, past programs, the four directions, Telegram link and email
+- `src/pages/` — Home, About and Programs pages
+- `src/index.css` — all styles; colours and fonts are set at the top in `:root`
+- `public/images/` — photos (founders, events, join section)
+- `public/_redirects` — lets Netlify serve `/about` and `/courses` on refresh
